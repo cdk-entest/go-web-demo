@@ -1282,13 +1282,13 @@ Here is UserData
 cd /home/ec2-user/
 wget https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
 tar -xvf go1.21.5.linux-amd64.tar.gz
-echo 'PATH=/home/ec2-user/go/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=/home/ec2-user/go/bin:$PATH' >> ~/.bashrc
 
-wget https://github.com/cdk-entest/swinburne-dn-cos20019/archive/refs/heads/main.zip
+wget https://github.com/cdk-entest/go-web-demo/archive/refs/heads/main.zip
 unzip main
-cd swinburne-dn-cos20019-main/
-go mod tidy
-go run main.go
+cd go-web-demo-main/
+~/go/bin/go mod tidy
+~/go/bin/go run main.go
 ```
 
 Here is Dockerfile
