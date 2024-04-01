@@ -37,23 +37,23 @@ func main() {
 
 	// db init
 	dns := fmt.Sprintf("host=%v port=%v user=%v password=%v dbname=%v", HOST, "5432", USER, PASS, DBNAME)
-	db, _ := gorm.Open(postgres.Open(dns), &gorm.Config{
+
+	db, error := gorm.Open(postgres.Open(dns), &gorm.Config{
 		NamingStrategy: schema.NamingStrategy{
 			NoLowerCase:   false,
 			SingularTable: true,
 		},
 	})
 
+  if (error != nil) {
+    fmt.Println(error)
+  }
+
 	mux := http.NewServeMux()
 
 	// home page
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./static/bedrock.html")
-	})
-
-	// book page
-	mux.HandleFunc("/book", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./static/book.html")
+		http.ServeFile(w, r, "index.html")
 	})
 
 	mux.HandleFunc("/postgresql", func(w http.ResponseWriter, r *http.Request) {
@@ -97,4 +97,3 @@ func getBooks(db *gorm.DB) []Book {
 
 	return books
 }
-
