@@ -45,17 +45,21 @@ func main() {
 		},
 	})
 
-  if (error != nil) {
-    fmt.Println(error)
-  }
+	if error != nil {
+		fmt.Println(error)
+	}
 
 	mux := http.NewServeMux()
+
+  // static files 
+  mux.Handle("/demo/", http.StripPrefix("/demo/", http.FileServer(http.Dir("./static"))))
 
 	// home page
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
 
+  // postgresql page 
 	mux.HandleFunc("/postgresql", func(w http.ResponseWriter, r *http.Request) {
 
 		// query a list of book []Book
