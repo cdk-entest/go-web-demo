@@ -14,8 +14,7 @@ Use golang to build a very simple webapp
 - userdata to deploy on EC2
 - dockerize to deploy somewhere else
 
-> [!NOTE]  
-> [Github](https://github.com/cdk-entest/go-web-demo)
+[Github](https://github.com/cdk-entest/go-web-demo)
 
 ## Setup PostgreSQL
 
