@@ -12,7 +12,10 @@ Use golang to build a very simple webapp
 - serve a static book page
 - query postgresql and return a list book
 - userdata to deploy on EC2
-- dockerize to deploy somewhereelse
+- dockerize to deploy somewhere else
+
+> [!NOTE]  
+> [Github](https://github.com/cdk-entest/go-web-demo)
 
 ## Setup PostgreSQL
 
