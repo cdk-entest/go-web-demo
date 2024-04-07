@@ -62,7 +62,13 @@ Insert to a table
 
 ```sql
 INSERT INTO book (author, title, amazon, image)
-values ('Hai Tran', 'Deep Learning', '', 'dog.jpg') RETURNING id;
+values ('Hai Tran', 'Deep Learning', '', 'golang-idiomatic.jpg') RETURNING id;
+```
+
+Delete a record
+
+```sql
+DELETE FROM book where id=1;
 ```
 
 ## Go Application
