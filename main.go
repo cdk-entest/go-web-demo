@@ -78,7 +78,7 @@ func main() {
 
 	// create web server
 	server := &http.Server{
-		Addr:           ":3000",
+		Addr:           ":80",
 		Handler:        mux,
 		ReadTimeout:    30 * time.Second,
 		WriteTimeout:   30 * time.Second,
