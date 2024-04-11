@@ -1293,7 +1293,7 @@ tar -xvf go1.21.5.linux-amd64.tar.gz
 wget https://github.com/cdk-entest/go-web-demo/archive/refs/heads/main.zip
 unzip main
 cd go-web-demo-main/
-~/go/bin/go run main.go
+./entest &
 ```
 
 Here is Dockerfile
